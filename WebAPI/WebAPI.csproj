@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -20,6 +21,9 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -179,6 +183,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular5\karma.conf.js" />
+    <Content Include="Angular5\protractor.conf.js" />
+    <Content Include="Angular5\src\app\app.component.css" />
+    <Content Include="Angular5\src\app\app.component.html" />
+    <Content Include="Angular5\src\app\navbar\navbar.component.css" />
+    <Content Include="Angular5\src\app\navbar\navbar.component.html" />
+    <Content Include="Angular5\src\app\quiz\quiz.component.css" />
+    <Content Include="Angular5\src\app\quiz\quiz.component.html" />
+    <Content Include="Angular5\src\app\register\register.component.css" />
+    <Content Include="Angular5\src\app\register\register.component.html" />
+    <Content Include="Angular5\src\app\result\result.component.css" />
+    <Content Include="Angular5\src\app\result\result.component.html" />
+    <Content Include="Angular5\src\assets\img\logo.png" />
+    <Content Include="Angular5\src\assets\img\trophy.png" />
+    <Content Include="Angular5\src\favicon.ico" />
+    <Content Include="Angular5\src\index.html" />
+    <Content Include="Angular5\src\styles.css" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -217,6 +238,18 @@
       <DependentUpon>DBModels.edmx</DependentUpon>
       <LastGenOutput>DBModels.cs</LastGenOutput>
     </Content>
+    <Content Include="Angular5\.angular-cli.json" />
+    <Content Include="Angular5\.editorconfig" />
+    <Content Include="Angular5\.gitignore" />
+    <Content Include="Angular5\e2e\tsconfig.e2e.json" />
+    <Content Include="Angular5\package-lock.json" />
+    <Content Include="Angular5\package.json" />
+    <Content Include="Angular5\README.md" />
+    <Content Include="Angular5\src\assets\.gitkeep" />
+    <Content Include="Angular5\src\tsconfig.app.json" />
+    <Content Include="Angular5\src\tsconfig.spec.json" />
+    <Content Include="Angular5\tsconfig.json" />
+    <Content Include="Angular5\tslint.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -241,6 +274,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -250,11 +284,38 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Angular5\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="Angular5\e2e\app.po.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\auth\auth.guard.spec.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\auth\auth.guard.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\navbar\navbar.component.spec.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\quiz\quiz.component.spec.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\quiz\quiz.component.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\register\register.component.spec.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\register\register.component.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\result\result.component.spec.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\result\result.component.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\routes.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\shared\quiz.service.spec.ts" />
+    <TypeScriptCompile Include="Angular5\src\app\shared\quiz.service.ts" />
+    <TypeScriptCompile Include="Angular5\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="Angular5\src\environments\environment.ts" />
+    <TypeScriptCompile Include="Angular5\src\main.ts" />
+    <TypeScriptCompile Include="Angular5\src\polyfills.ts" />
+    <TypeScriptCompile Include="Angular5\src\test.ts" />
+    <TypeScriptCompile Include="Angular5\src\typings.d.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
